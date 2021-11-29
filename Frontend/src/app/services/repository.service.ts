@@ -4,12 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 
-interface serverResponse {
-  statusCode: number;
-  data: Array<any>;
-  message: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })

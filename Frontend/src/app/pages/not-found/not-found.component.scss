@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.not_found{
+    color: $font-secondary;
+    margin-top:4rem;
+    flex-direction: column;
+
+    mat-icon{
+        font-size: 84px;
+        width:84px;
+    }
+
+}

@@ -1,7 +1,7 @@
 <!-- Reusable Search Box component which takes title as input and will output the text we searched on clicking submit -->
 <!-- being used in repositories and users page -->
 
-<div class="rpsty_banner">
+<div class="search_wrapper">
 
     <!-- Title to display for what we are searching -->
     <div class="msg">
@@ -12,7 +12,8 @@
     <div class="flex_center">
         <div class="search_box">
 
-            <input class="search_input" type="text" [(ngModel)]="searchText" (keyup.enter)="search()">
+            <input class="search_input" type="text" placeholder="Enter text to search..."
+            [(ngModel)]="searchText" (keyup.enter)="search()">
             <div class="flex_center search_icon">
                 <mat-icon>search</mat-icon>
             </div>

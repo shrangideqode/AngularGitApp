@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-search-banner',
-  templateUrl: './search-banner.component.html',
-  styleUrls: ['./search-banner.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class SearchBannerComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   constructor() { 
     this.searchText = '';

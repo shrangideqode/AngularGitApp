@@ -12,7 +12,7 @@ import { RespositoriesComponent } from './pages/respositories/respositories.comp
 import { UsersComponent } from './pages/users/users.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchBannerComponent } from './components/search-banner/search-banner.component';
+import { SearchComponent } from './components/search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -37,7 +37,7 @@ const modules = [
     RespositoriesComponent,
     UsersComponent,
     NotFoundComponent,
-    SearchBannerComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

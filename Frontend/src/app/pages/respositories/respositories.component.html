@@ -3,7 +3,7 @@
 <section class="rpsty_wrapper">
 
     <!-- Reusable Search Box Component -->
-    <app-search-banner title="Search for Repository" (searchEvent)="searchRepo($event)"></app-search-banner>
+    <app-search title="Search for Repository" (searchEvent)="searchRepo($event)"></app-search>
     
     <!-- All Repositories Cards -->
     <div class="rpsty_cards" *ngIf="!loader">
