@@ -1,0 +1,78 @@
+<section>
+
+    <!-- Search Box -->
+    <app-search-banner title="Search for Users" (searchEvent)="searchUsers($event)"></app-search-banner>
+
+    <!-- All Users Card -->
+    <div class="rpsty_cards" *ngIf="!loader">
+        
+        <div class="user_card_wrapper" *ngFor="let user of allUsers  | paginate: { itemsPerPage: limit, currentPage: page, totalItems: total }">
+            
+            <div class="user_card">
+                <a [href]="user.html_url" target="_blank">
+                    <img matRipple class="user_img" [src]="getImage(user)"/>
+                </a>
+                
+                <div class="user_details">
+                    <div>
+                        <div class="user_name"><a [href]="user.html_url" target="_blank">{{user.name}}</a></div>
+                        <div class="user_id">@{{user.login}}</div>
+                        <div class="user_desc">{{user.bio}}</div>
+                       
+                    </div>
+                    <div class="user_info">
+                        <div class="user_badges">
+                            <span class="badge" *ngFor='let b of user.topics'>  {{b}} </span>
+                          </div>
+
+                        <div class="user_info_item">
+                            <mat-icon class="infoIcon">group</mat-icon>
+                            <span>{{user.followers}}</span>
+                        </div>
+
+                        <div class="user_info_item">
+                            <span class="" style="margin-right:1px; ">{{user.following}}</span>
+                            <span>Following</span>
+                        </div>
+
+                        <div class="user_info_item">
+                            <mat-icon class="infoIcon">code</mat-icon>
+                            <span>{{user.public_repos}}</span>
+                        </div>
+
+                        <div class="user_info_item">
+                            <mat-icon class="infoIcon">home</mat-icon>
+                            <span>{{user.location}}</span>
+                        </div>
+
+                        <div class="user_info_item">
+                            <mat-icon class="infoIcon">access_time</mat-icon>
+                            <span>{{user.created_at | date:'mediumDate' }}</span>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination-controls" *ngIf="allUsers.length>0">
+            <pagination-controls  [responsive]="true" (pageChange)="changePage($event)"></pagination-controls>
+        </div>
+
+    </div>
+
+    <!-- No Users Found Message -->
+    <div class="flex_center no_data" *ngIf='allUsers.length===0 && flag'>
+        <div class="msg">
+            No Users Found
+        </div>
+    </div>
+
+    <!-- Spinner Loader -->
+    <div class="flex_center no_data" *ngIf='loader'>
+        <div class="msg" style="padding:40px">
+            <mat-spinner color="accent"></mat-spinner>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,19 @@
+<div class="rpsty_banner">
+    <div class="msg">
+      {{title}}
+    </div>
+    <div class="flex_center">
+        <div class="search_box">
+
+            <input class="search_input" type="text" [(ngModel)]="searchText" (keyup.enter)="search()">
+            <div class="flex_center search_icon">
+                <mat-icon>search</mat-icon>
+            </div>
+            <div class='flex_center search_submit' (click)="search()" >
+                <mat-icon>arrow_forward</mat-icon>
+            </div>
+        </div>
+          
+    </div>
+    
+</div>

@@ -1,0 +1,101 @@
+@import '../../variables';
+
+.rpsty_wrapper{
+
+    color: $font-secondary;
+
+    .rpsty_cards{
+        padding: 20px 3%;
+    }
+}
+
+.repo_card_wrapper{
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: $primary-color;
+    padding: 18px;
+    box-shadow: 0px 2px 4px rgba(20, 20, 20, 0.2);
+
+    .repo_card{
+        display:flex;
+
+        .repo_card>div{
+            width:100%;
+        }
+
+    }
+
+    .repo_img{
+        flex-shrink:0;
+        width:100px;
+        height:100px;
+        background-color: rgb(29, 29, 29);
+        color: black;
+        text-shadow:2px 2px 0px rgba(255, 255, 255, 0.6);
+        font-size: 32px;
+    }
+
+    .repo_details{
+        flex: 1 1 auto;
+        padding:0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .repo_name{
+            font-size:1.2rem;
+            color: $font-primary;
+            cursor: pointer;
+
+            a{
+                color: $font-primary;
+            }
+        }
+
+        .repo_desc{
+            margin-top:5px;
+            
+        }
+
+        .repo_badges{
+            display: flex;
+            flex-wrap: wrap;
+            flex-basis: 100%;
+            margin: 5px 0px;
+        }
+
+        .repo_info{
+            
+            display: flex;
+            flex-wrap: wrap;
+
+            .repo_info_item{
+                margin-right: 10px;
+                display:flex;
+                align-items: center;
+            }
+        }
+
+        .infoIcon{
+            font-size:14px;
+            width:14px;
+            height:14px;
+        }
+
+
+
+    }
+}
+
+
+.badge{
+    background-color: lighten(blue, 37%);
+    color: darken(blue,30%);
+    cursor: default;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding:0 10px;
+    margin-right:4px;
+    margin-bottom:4px;
+}

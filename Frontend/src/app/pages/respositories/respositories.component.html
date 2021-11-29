@@ -1,0 +1,66 @@
+<section class="rpsty_wrapper">
+
+    <!-- Search Box -->
+    <app-search-banner title="Search for Repository" (searchEvent)="searchRepo($event)"></app-search-banner>
+    
+    <!-- All Repositories Cards -->
+    <div class="rpsty_cards" *ngIf="!loader">
+        
+        <div class="repo_card_wrapper" *ngFor="let repo of allRepos | paginate: { itemsPerPage: limit, currentPage: page, totalItems: total }">
+            
+            <div class="repo_card">
+                <div class="flex_center repo_img" [style.backgroundColor]="repo.bgColor">
+                    {{repo.name.slice(0,1) | uppercase}}
+                </div>
+                
+                <div class="repo_details">
+                    <div>
+                        <div class="repo_name"><a [href]="repo.html_url" target="_blank">{{repo.full_name}}</a></div>
+                        <div class="repo_desc">{{repo.description}}</div>
+                       
+                    </div>
+                    <div class="repo_info">
+                        <div class="repo_badges">
+                            <span class="badge" *ngFor='let b of repo.topics'>  {{b}} </span>
+                          </div>
+
+                        <div class="repo_info_item">
+                           <mat-icon class="infoIcon">star</mat-icon> 
+                           <span>{{repo.stargazers_count}}</span> 
+                        </div>
+
+                        <div class="repo_info_item">
+                            <mat-icon class="infoIcon">person</mat-icon>
+                            <span>{{repo.owner.login}}</span>
+                        </div>
+
+                        <div class="repo_info_item">
+                            <mat-icon class="infoIcon">access_time</mat-icon>
+                            <span>{{getDate(repo.updated_at) | date:'mediumDate' }}</span>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination-controls" *ngIf="allRepos.length>0">
+            <pagination-controls  [responsive]="true" (pageChange)="changePage($event)"></pagination-controls>
+        </div>
+    </div>
+
+    <!-- No Repository Found Message -->
+    <div class="flex_center no_data" *ngIf='allRepos.length===0 && flag'>
+        <div class="msg">
+            No Repository Found
+        </div>
+    </div>
+
+    <!-- Spinning Loader -->
+    <div class="flex_center no_data" *ngIf='loader'>
+        <div class="msg" style="padding:40px">
+            <mat-spinner color="accent"></mat-spinner>
+        </div>
+    </div>
+
+</section>  
