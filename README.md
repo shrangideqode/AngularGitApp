@@ -1,5 +1,10 @@
 # AngularGitApp
 
+Note - Before starting you should have **node.js** environment and **mongoDB** database installed on your system.
+
+Generate Your Github Token by following the steps -  
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
 ## Backend Installation
 1. Install the dependencies and start the server.
 
