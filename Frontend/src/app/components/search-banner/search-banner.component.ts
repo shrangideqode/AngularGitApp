@@ -19,6 +19,7 @@ export class SearchBannerComponent implements OnInit {
     
   }
 
+  // This will emit search text whenever we click on submit or press enter to submit
   search():void{
     console.log('search:', this.searchText);
     
